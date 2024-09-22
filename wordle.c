@@ -63,21 +63,21 @@ int wordle_server(int argc, char **argv)
     signal_received = 0;
     if (argc != 5)
     {
-        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: hw3.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
+        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: a.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
         return EXIT_FAILURE;
     }
     // validate inputs
     int port = atoi(*(argv + 1));
     if (port <= 0 || port > 65535)
     {
-        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: hw3.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
+        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: a.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
         return EXIT_FAILURE;
     }
 
     unsigned int seed = atoi(*(argv + 2));
     if (seed <= 0)
     {
-        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: hw3.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
+        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: a.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
         return EXIT_FAILURE;
     }
 
@@ -86,7 +86,7 @@ int wordle_server(int argc, char **argv)
     num_words = atoi(*(argv + 4));
     if (num_words <= 0)
     {
-        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: hw3.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
+        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: a.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
         return EXIT_FAILURE;
     }
 
@@ -94,7 +94,7 @@ int wordle_server(int argc, char **argv)
     int wordsfd = open(filename, O_RDONLY);
     if (wordsfd == -1)
     {
-        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: hw3.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
+        fprintf(stderr, "ERROR: Invalid argument(s)\nUSAGE: a.out <listener-port> <seed> <dictionary-filename> <num-words>\n");
         return EXIT_FAILURE;
     }
 
